@@ -1,0 +1,43 @@
+/*
+    캘린더
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; }
+section{ display: flex; justify-content: center; align-items: center; min-height:100vh; background:#ededed; }
+.box { position: relative; }
+.container { position: relative; min-width:400px; border-radius:10px; box-shadow: 10px 10px 30px rgba(0,0,0,0.1), -15px -15px 30px #fff; }
+#dycalendar {
+    width:100%;
+    padding:30px 30px 0;
+}
+#dycalendar table { 
+    width:100%;
+    border-spacing: 15px;
+}
+#dycalendar table tr:nth-child(1) td {
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius:10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px #fff;
+    background:#ff7eaa;
+    color:#fff;
+    font-weight:900;
+}
+#dycalendar table tr:nth-child(1) td:nth-child(1) {
+    background: #ffce3a;
+}
+#dycalendar table td {
+    color:#777;
+    padding:10px 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px #fff;
+    font-size:1.25em;
+    font-weight:500;
+    cursor: pointer;
+}
+#dycalendar table td:hover {
+    box-shadow: inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px #fff;
+}
+#dycalendar table td:first-child {
+    color:#ffce3a;
+}
+#dycalendar .dycalendar-month-container .dycalendar-target-date { border:1px solid #ddd; box-shadow: 5px 5px 10px rgba(0,0,0,0.1), -5px -5px 10px rgba(255,255,255,1); background-color:#ff7eaa; color:#fff; }
