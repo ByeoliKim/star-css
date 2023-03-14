@@ -1,0 +1,30 @@
+/*
+    emoji cursor
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; }
+body{ display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #d2d5ff; }
+span { position: absolute; pointer-events: none; animation: animate 1s linear infinite }
+@keyframes animate {
+    0% {
+        translate: 0 0;
+        opacity: 0;
+    }
+    10% {
+        /* translate: 0 0; */
+        opacity: 1;
+    }
+    30% {
+        translate: 0 100px;
+        opacity: 1;
+    }
+    90% {
+        /* translate: 0 0; */
+        opacity: 1;
+    }
+    100% {
+        translate: 0 80px;
+        opacity: 0;
+    }
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emoji cursor</title>
+    <link rel="stylesheet" href="./20230314.css">
+</head>
+<body>
+    <script>
+
+        let images = ['🥰', '😍', '😘','🐶','🐱','🐭','🐹','🐰','🦊','🐻','🐷','🐯','🐮','🐤','🐧'];
+
+        document.addEventListener('mousemove', function(e){
+            let body = document.querySelector('body');
+            let emoji = document.createElement('span');
+            let x = e.offsetX;
+            let y = e.offsetY;
+            /*
+                위 메서드는 이벤트 대상이 기준이 됩니다. ( 화면 중간에 있는 박스 내부에서 클릭한 위치를 찾을 때 해당 박스의 왼쪽 모서리 좌표가 0이됩니다. 화면의 기준이 아닙니다)
+
+                전체 문서를 기준으로 합니다(스크롤 화면 포함)
+
+                offsetX - 이벤트 대상 객체에서 상대적 마우스 x좌표 위치를 반환합니다.
+
+                offsetY : 이벤트 대상 객체에서 상대적 마우스 y좌표 위치를 반환합니다.
+            */
+           
+            emoji.style.left = x + 'px';
+            emoji.style.top = y + 'px';
+
+            let icon = images[Math.floor(Math.random() * images.length)];
+
+            emoji.innerText = icon;
+            
+            let size = Math.random() * 50;
+            emoji.style.fontSize = 5 + size + 'px';
+
+            let max = 0;
+            let min = 200;
+            let randomValue = Math.floor((Math.random() * ((max + 1) - min)) + min);
+
+            emoji.style.transform = 'translateX('+ randomValue + 'px)';
+
+            body.appendChild(emoji);
+
+            setTimeout(function() {
+                emoji.remove();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
