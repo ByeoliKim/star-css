@@ -1,0 +1,13 @@
+/*
+    menu hover effects
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* { margin:0; padding:0; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; letter-spacing: -1px; }
+body{ display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow:hidden; background: #fff;  }
+ul { position: relative; }
+ul li { list-style: none; text-align: center; }
+ul li a { display:inline-block; padding: 5px 20px; color:#333; text-decoration: none; font-size: 2em; font-weight:300; letter-spacing: 0.1em; text-transform: uppercase; }
+ul li:hover a { background: #333; color:var(--colors); font-weight:500; }
+ul:hover > li:not(:hover) { opacity: 0; }
+ul li a::before { content:''; display: flex; justify-content: center; align-items: center; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:#222; font-size:5em; font-weight:100; opacity: 0; text-transform: initial; letter-spacing: 500px; transition: letter-spacing 0.5s; z-index:-1; }
+ul li a:hover::before { content: attr(data-text); left:50%; width:250vw; height:250vh; background:var(--colors); letter-spacing: 0; opacity: 1; }
